@@ -1,0 +1,1660 @@
+{
+	"info": {
+		"_postman_id": "51b1e317-adc4-478e-a1f9-66710af9cf3b",
+		"name": "Post",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24262954"
+	},
+	"item": [
+		{
+			"name": "GetLPostList",
+			"item": [
+				{
+					"name": "ПравНеПравМетоды",
+					"item": [
+						{
+							"name": "GetPostList",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetPostList(не правильный метод)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Параметры_page",
+					"item": [
+						{
+							"name": "GetPostList(page=0)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/post?page=0",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetPostList(page=1)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/post?page=1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetPostList(page=999)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/post?page=999",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "999"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetPostList(page=1000)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/post?page=1000",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1000"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetPostList(page=не число)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/post?page=dfgfdg",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "dfgfdg"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetPostList(page=не заполнено)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/post?page=",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Параметры_limit",
+					"item": [
+						{
+							"name": "GetPostList(limit=4)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/post?limit=4",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetPostList(limit=5)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/post?limit=5",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetPostList(limit=50)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/post?limit=50",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "50"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetPostList(limit=51)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/post?limit=51",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "51"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetPostList(limit=не число)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/post?limit=%%№ываыва",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "%%№ываыва"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetPostList(limit=не заполнено)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/post?limit=",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Параметры_created",
+					"item": [
+						{
+							"name": "GetPostList(created=0)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/post?created=0",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post"
+									],
+									"query": [
+										{
+											"key": "created",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetPostList(created=1)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/post?created=1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post"
+									],
+									"query": [
+										{
+											"key": "created",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetPostList(created=2)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/post?created=2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post"
+									],
+									"query": [
+										{
+											"key": "created",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetPostList(created=не число)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/post?created=*(*)(khkhkj",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post"
+									],
+									"query": [
+										{
+											"key": "created",
+											"value": "*(*)(khkhkj"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetPostList(created=не заполнено)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/post?created=",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post"
+									],
+									"query": [
+										{
+											"key": "created",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "CreatePost",
+			"item": [
+				{
+					"name": "ПравНеПравМетоды",
+					"item": [
+						{
+							"name": "CreatePost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется, перрон останется\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePost(не правильный метод)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется, перрон останется\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "JSON_ID поста",
+					"item": [
+						{
+							"name": "CreatePost(указан ID поста)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"670c0b46afaaf5a2f19af333\",\r\n    \"text\": \"вагончик тронется, перрон останется\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "JSON_publishDate",
+					"item": [
+						{
+							"name": "CreatePost(указан publishDate)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется, перрон останется\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\"\r\n            ],\r\n    \"publishDate\": \"2024-10-13T18:04:51.746Z\",\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "JSON_text",
+					"item": [
+						{
+							"name": "CreatePostText(не указан)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostText(length=5)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагон\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostText(length=6)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагоны\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostText(length=50)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется, перрон останется, абвгдеёжзийкл\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostText(length=51)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется, перрон останется, абвгдеёжзийкл1\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostText(Array)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": [\r\n                \"111\",\r\n                \"222\",\r\n                \"333\"\r\n            ],\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostText(Object)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": {\r\n        \"id\": \"670909db271e4e0bfd3305cf\",\r\n        \"title\": \"mr\",\r\n        \"firstName\": \"Wilhelmine\",\r\n        \"lastName\": \"Mraz\"\r\n    },\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostText(Boolean)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": true,\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "JSON_image",
+					"item": [
+						{
+							"name": "CreatePostImage(не указан)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": \"\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostImage(correct URL)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostImage(incorrect URL)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": \"demotions.ru/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostImage(Array)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": [\r\n        \"mart\",\r\n        \"april\",\r\n        \"train\"\r\n    ],\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostImage(Object)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": {\r\n        \"id\": \"670909db271e4e0bfd3305cf\",\r\n        \"title\": \"mr\",\r\n        \"picture\": \"http://placeimg.com/640/480\"\r\n    },\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostImage(Boolean)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": true,\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "JSON_likes",
+					"item": [
+						{
+							"name": "CreatePostLikes(не указан)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": ,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostLikes(-1)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": -1,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostLikes(0)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostLikes(155)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 155,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostLikes(Array)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": [\r\n        \"mart\",\r\n        \"april\",\r\n        \"train\"\r\n    ],\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostLikes(Object)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": {\r\n        \"id\": \"670909db271e4e0bfd3305cf\",\r\n        \"title\": \"mr\",\r\n        \"picture\": \"http://placeimg.com/640/480\"\r\n    },\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostLikes(string)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": \"ewrewrewr\",\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostLikes(boolean)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": true,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "JSON_Tags",
+					"item": [
+						{
+							"name": "CreatePostTags(не указан)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": ,\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostTags(Array string)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется, а мы останемся\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\",\r\n                \"rrrr\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostTags(Array number)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется, а мы останемся\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                1,\r\n                2,\r\n                3\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostTags(Object)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется, а мы останемся\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": {\r\n        \"title\": \"mr\",\r\n        \"firstName\": \"Wilhelmine\",\r\n        \"lastName\": \"Mraz\",\r\n        \"picture\": \"http://placeimg.com/640/480\"\r\n    },\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostTags(string)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется, а мы останемся\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": \"sdfdsfdsf\",\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostTags(number)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется, а мы останемся\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": 1000,\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostTags(boolean)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется, а мы останемся\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": true,\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "JSON_Owner",
+					"item": [
+						{
+							"name": "CreatePostOwner(не указан)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostOwner(Correct User ID)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostOwner(Incorrect User ID)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": \"670909db271e4e0bfd3305cf2222222\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostOwner(Array)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": [\r\n                \"mart\",\r\n                \"april\"\r\n            ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostOwner(Object)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": {\r\n        \"id\": \"670909db271e4e0bfd3305cf\",\r\n        \"title\": \"mr\",\r\n        \"firstName\": \"Wilhelmine\",\r\n        \"lastName\": \"Mraz\",\r\n        \"picture\": \"http://placeimg.com/640/480\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostOwner(number)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": 555555\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreatePostOwner(boolean)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"text\": \"вагончик тронется\",\r\n    \"image\": \"https://demotions.ru/uploads/posts/2018-06/1529031714_Vagonchik-tronetsya-_demotions.ru.jpg\",\r\n    \"likes\": 0,\r\n    \"tags\": [\r\n                \"mart\",\r\n                \"april\",\r\n                \"train\"\r\n            ],\r\n    \"owner\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/post/create",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"post",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "GetUserList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/user",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/user/60d0fe4f5311236168a109ca",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"user",
+						"60d0fe4f5311236168a109ca"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{app-id}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "app-id",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

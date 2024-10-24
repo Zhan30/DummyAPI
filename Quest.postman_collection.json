@@ -1,0 +1,3257 @@
+{
+	"info": {
+		"_postman_id": "90f9c80f-bcae-4830-a5ff-30d8b096a9e0",
+		"name": "Quest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24262954"
+	},
+	"item": [
+		{
+			"name": "Author",
+			"item": [
+				{
+					"name": "GetAuthorList",
+					"item": [
+						{
+							"name": "ПравНеПравМетоды",
+							"item": [
+								{
+									"name": "GetAuthorList",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200 OK\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code is OK\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"var jsonData = pm.response.json();\r",
+													"\r",
+													"pm.test(\"Check body jsonData is array\", function () {\r",
+													"    pm.expect(jsonData).to.be.an('array')\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check body jsonData[0].id is string\", function () {\r",
+													"    pm.expect(jsonData[0].id).to.be.an('String')\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check body jsonData[0].firstName is string\", function () {\r",
+													"    pm.expect(jsonData[0].firstName).to.be.an('String')\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check body jsonData[0].lastName is string\", function () {\r",
+													"    pm.expect(jsonData[0].lastName).to.be.an('String')\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check body jsonData[0].photo is null\", function () {\r",
+													"    pm.expect(jsonData[0].photo).to.be.an('null')\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check body jsonData[0].dateOfBirth is string\", function () {\r",
+													"    pm.expect(jsonData[0].dateOfBirth).to.be.an('String')\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check body jsonData[0].about is null\", function () {\r",
+													"    pm.expect(jsonData[0].about).to.be.an('null')\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check body jsonData[1].photo is string\", function () {\r",
+													"    pm.expect(jsonData[1].photo).to.be.an('String')\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check body jsonData[1].about is string\", function () {\r",
+													"    pm.expect(jsonData[1].about).to.be.an('String')\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check limit equals 20\", function () {\r",
+													"    pm.expect(jsonData.limit).to.eql(20);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check page equals 0\", function () {\r",
+													"    pm.expect(jsonData.page).to.eql(0);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check body total is number\", function () {\r",
+													"    pm.expect(jsonData.total).to.be.a('number')\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://apiquest.sedtest-tools.ru:3000/v1/author",
+											"protocol": "http",
+											"host": [
+												"apiquest",
+												"sedtest-tools",
+												"ru"
+											],
+											"port": "3000",
+											"path": [
+												"v1",
+												"author"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetAuthorList(не прав метод)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "http://apiquest.sedtest-tools.ru:3000/v1/author",
+											"protocol": "http",
+											"host": [
+												"apiquest",
+												"sedtest-tools",
+												"ru"
+											],
+											"port": "3000",
+											"path": [
+												"v1",
+												"author"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Параметры_page",
+							"item": [
+								{
+									"name": "GetAuthorList(page=0)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://apiquest.sedtest-tools.ru:3000/v1/author?page=0",
+											"protocol": "http",
+											"host": [
+												"apiquest",
+												"sedtest-tools",
+												"ru"
+											],
+											"port": "3000",
+											"path": [
+												"v1",
+												"author"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "0"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetAuthorList(page=0) через слеш",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://apiquest.sedtest-tools.ru:3000/v1/author/page=0",
+											"protocol": "http",
+											"host": [
+												"apiquest",
+												"sedtest-tools",
+												"ru"
+											],
+											"port": "3000",
+											"path": [
+												"v1",
+												"author",
+												"page=0"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetAuthorList(page=1)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://apiquest.sedtest-tools.ru:3000/v1/author?page=1",
+											"protocol": "http",
+											"host": [
+												"apiquest",
+												"sedtest-tools",
+												"ru"
+											],
+											"port": "3000",
+											"path": [
+												"v1",
+												"author"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetAuthorList(page=999)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://apiquest.sedtest-tools.ru:3000/v1/author?page=999",
+											"protocol": "http",
+											"host": [
+												"apiquest",
+												"sedtest-tools",
+												"ru"
+											],
+											"port": "3000",
+											"path": [
+												"v1",
+												"author"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "999"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetAuthorList(page=1000)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://apiquest.sedtest-tools.ru:3000/v1/author?page=1000",
+											"protocol": "http",
+											"host": [
+												"apiquest",
+												"sedtest-tools",
+												"ru"
+											],
+											"port": "3000",
+											"path": [
+												"v1",
+												"author"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1000"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetAuthorList(page=не число)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://apiquest.sedtest-tools.ru:3000/v1/author?page=werewrew",
+											"protocol": "http",
+											"host": [
+												"apiquest",
+												"sedtest-tools",
+												"ru"
+											],
+											"port": "3000",
+											"path": [
+												"v1",
+												"author"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "werewrew"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetAuthorList(page=не заполнено)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://apiquest.sedtest-tools.ru:3000/v1/author?page=",
+											"protocol": "http",
+											"host": [
+												"apiquest",
+												"sedtest-tools",
+												"ru"
+											],
+											"port": "3000",
+											"path": [
+												"v1",
+												"author"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": ""
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Параметры_limit",
+							"item": [
+								{
+									"name": "GetAuthorList(limit=5) через слеш",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://apiquest.sedtest-tools.ru:3000/v1/author/limit=5",
+											"protocol": "http",
+											"host": [
+												"apiquest",
+												"sedtest-tools",
+												"ru"
+											],
+											"port": "3000",
+											"path": [
+												"v1",
+												"author",
+												"limit=5"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetAuthorList(limit=5)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://apiquest.sedtest-tools.ru:3000/v1/author?limit=5",
+											"protocol": "http",
+											"host": [
+												"apiquest",
+												"sedtest-tools",
+												"ru"
+											],
+											"port": "3000",
+											"path": [
+												"v1",
+												"author"
+											],
+											"query": [
+												{
+													"key": "limit",
+													"value": "5"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetAuthorList(limit=50)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://apiquest.sedtest-tools.ru:3000/v1/author?limit=50",
+											"protocol": "http",
+											"host": [
+												"apiquest",
+												"sedtest-tools",
+												"ru"
+											],
+											"port": "3000",
+											"path": [
+												"v1",
+												"author"
+											],
+											"query": [
+												{
+													"key": "limit",
+													"value": "50"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetAuthorList(limit=не число)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://apiquest.sedtest-tools.ru:3000/v1/author?limit=yuyuyuiyi",
+											"protocol": "http",
+											"host": [
+												"apiquest",
+												"sedtest-tools",
+												"ru"
+											],
+											"port": "3000",
+											"path": [
+												"v1",
+												"author"
+											],
+											"query": [
+												{
+													"key": "limit",
+													"value": "yuyuyuiyi"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetAuthorList(limit=не заполнено)",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://apiquest.sedtest-tools.ru:3000/v1/author?limit=",
+											"protocol": "http",
+											"host": [
+												"apiquest",
+												"sedtest-tools",
+												"ru"
+											],
+											"port": "3000",
+											"path": [
+												"v1",
+												"author"
+											],
+											"query": [
+												{
+													"key": "limit",
+													"value": ""
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GetAuthorById",
+					"item": [
+						{
+							"name": "ПравНеПравМетоды",
+							"item": [
+								{
+									"name": "GetAuthorById",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200 OK\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Status code is OK\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"var jsonData = pm.response.json();\r",
+													"\r",
+													"pm.test(\"Check body jsonData.id is string\", function () {\r",
+													"    pm.expect(jsonData.id).to.be.an('String')\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check body jsonData.id equals 3445\", function () {\r",
+													"    pm.expect(jsonData.id).to.eql(3445)\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check body jsonData.firstName is string\", function () {\r",
+													"    pm.expect(jsonData.firstName).to.be.an('String')\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check body jsonData.firstName equals Tia\", function () {\r",
+													"    pm.expect(jsonData.firstName).to.eql('Tia')\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check body jsonData.lastName is string\", function () {\r",
+													"    pm.expect(jsonData.lastName).to.be.an('String')\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check body jsonData.lastName equals @£\", function () {\r",
+													"    pm.expect(jsonData.lastName).to.eql('@£')\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check body jsonData.photo is string\", function () {\r",
+													"    pm.expect(jsonData.photo).to.be.an('String')\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check body jsonData.photo equals http://placeimg.com/640/480\", function () {\r",
+													"    pm.expect(jsonData.photo).to.eql('http://placeimg.com/640/480')\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check body jsonData.dateOfBirth is string\", function () {\r",
+													"    pm.expect(jsonData.dateOfBirth).to.be.an('String')\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check body jsonData.dateOfBirth equals 03/10/2005\", function () {\r",
+													"    pm.expect(jsonData.dateOfBirth).to.eql('03/10/2005')\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check body jsonData.about is string\", function () {\r",
+													"    pm.expect(jsonData.about).to.be.an('String')\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check body jsonData.about equals Metal Berkshire Games overriding\", function () {\r",
+													"    pm.expect(jsonData.about).to.eql('Metal Berkshire Games overriding')\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check limit equals 20\", function () {\r",
+													"    pm.expect(jsonData.limit).to.eql(20);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check page equals 0\", function () {\r",
+													"    pm.expect(jsonData.page).to.eql(0);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check body total is number\", function () {\r",
+													"    pm.expect(jsonData.total).to.be.a('number')\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://apiquest.sedtest-tools.ru:3000/v1/author/3462",
+											"protocol": "http",
+											"host": [
+												"apiquest",
+												"sedtest-tools",
+												"ru"
+											],
+											"port": "3000",
+											"path": [
+												"v1",
+												"author",
+												"3462"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetAuthorById(не прав метод)",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "http://apiquest.sedtest-tools.ru:3000/v1/author/3275",
+											"protocol": "http",
+											"host": [
+												"apiquest",
+												"sedtest-tools",
+												"ru"
+											],
+											"port": "3000",
+											"path": [
+												"v1",
+												"author",
+												"3275"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "AddAuthor",
+					"item": [
+						{
+							"name": "CreateAuthor",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200 OK\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 5000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.collectionVariables.set(\"authorId\", jsonData.id);\r",
+											"\r",
+											"\r",
+											"pm.test(\"Check body jsonData.id is string\", function () {\r",
+											"    pm.expect(jsonData.id).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.id\", function () {\r",
+											"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"authorId\"));\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.firstName is string\", function () {\r",
+											"    pm.expect(jsonData.firstName).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.firstName equals Ivanov\", function () {\r",
+											"    pm.expect(jsonData.firstName).to.eql('Ivanov');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.lastName is string\", function () {\r",
+											"    pm.expect(jsonData.lastName).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.lastName equals Ivan\", function () {\r",
+											"    pm.expect(jsonData.lastName).to.eql('Ivan');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.photo is string\", function () {\r",
+											"    pm.expect(jsonData.photo).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.photo equals https://imo10.labirint.ru/books/828314/cover.jpg/363-0\", function () {\r",
+											"    pm.expect(jsonData.photo).to.eql('https://imo10.labirint.ru/books/828314/cover.jpg/363-0');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.dateOfBirth is string\", function () {\r",
+											"    pm.expect(jsonData.dateOfBirth).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.dateOfBirth equals 03/10/2000\", function () {\r",
+											"    pm.expect(jsonData.dateOfBirth).to.eql('03/10/2000')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.about is string\", function () {\r",
+											"    pm.expect(jsonData.about).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.about equals Похититель трупов\", function () {\r",
+											"    pm.expect(jsonData.about).to.eql('Похититель трупов')\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Ivanov\",\r\n    \"lastName\": \"Ivan\",\r\n    \"photo\": \"https://imo10.labirint.ru/books/828314/cover.jpg/363-0\",\r\n    \"dateOfBirth\": \"03/10/2000\",\r\n    \"about\": \"Похититель трупов\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v202/author/add",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v202",
+										"author",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateAuthor(boolean в полях)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200 OK\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 5000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.collectionVariables.set(\"authorId\", jsonData.id);\r",
+											"\r",
+											"\r",
+											"pm.test(\"Check body jsonData.id is string\", function () {\r",
+											"    pm.expect(jsonData.id).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.id\", function () {\r",
+											"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"authorId\"));\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.firstName is string\", function () {\r",
+											"    pm.expect(jsonData.firstName).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.firstName equals Ivanov\", function () {\r",
+											"    pm.expect(jsonData.firstName).to.eql('Ivanov');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.lastName is string\", function () {\r",
+											"    pm.expect(jsonData.lastName).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.lastName equals Ivan\", function () {\r",
+											"    pm.expect(jsonData.lastName).to.eql('Ivan');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.photo is string\", function () {\r",
+											"    pm.expect(jsonData.photo).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.photo equals https://imo10.labirint.ru/books/828314/cover.jpg/363-0\", function () {\r",
+											"    pm.expect(jsonData.photo).to.eql('https://imo10.labirint.ru/books/828314/cover.jpg/363-0');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.dateOfBirth is string\", function () {\r",
+											"    pm.expect(jsonData.dateOfBirth).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.dateOfBirth equals 03/10/2000\", function () {\r",
+											"    pm.expect(jsonData.dateOfBirth).to.eql('03/10/2000')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.about is string\", function () {\r",
+											"    pm.expect(jsonData.about).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.about equals Похититель трупов\", function () {\r",
+											"    pm.expect(jsonData.about).to.eql('Похититель трупов')\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": true,\r\n    \"lastName\": false,\r\n    \"photo\": \"https://imo10.labirint.ru/books/828314/cover.jpg/363-0\",\r\n    \"dateOfBirth\": \"03/10/2000\",\r\n    \"about\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v202/author/add",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v202",
+										"author",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateAuthor(число в полях)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200 OK\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 5000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.collectionVariables.set(\"authorId\", jsonData.id);\r",
+											"\r",
+											"\r",
+											"pm.test(\"Check body jsonData.id is string\", function () {\r",
+											"    pm.expect(jsonData.id).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.id\", function () {\r",
+											"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"authorId\"));\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.firstName is string\", function () {\r",
+											"    pm.expect(jsonData.firstName).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.firstName equals Ivanov\", function () {\r",
+											"    pm.expect(jsonData.firstName).to.eql('Ivanov');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.lastName is string\", function () {\r",
+											"    pm.expect(jsonData.lastName).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.lastName equals Ivan\", function () {\r",
+											"    pm.expect(jsonData.lastName).to.eql('Ivan');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.photo is string\", function () {\r",
+											"    pm.expect(jsonData.photo).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.photo equals https://imo10.labirint.ru/books/828314/cover.jpg/363-0\", function () {\r",
+											"    pm.expect(jsonData.photo).to.eql('https://imo10.labirint.ru/books/828314/cover.jpg/363-0');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.dateOfBirth is string\", function () {\r",
+											"    pm.expect(jsonData.dateOfBirth).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.dateOfBirth equals 03/10/2000\", function () {\r",
+											"    pm.expect(jsonData.dateOfBirth).to.eql('03/10/2000')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.about is string\", function () {\r",
+											"    pm.expect(jsonData.about).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.about equals Похититель трупов\", function () {\r",
+											"    pm.expect(jsonData.about).to.eql('Похититель трупов')\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": 111,\r\n    \"lastName\": 222,\r\n    \"photo\": \"https://imo10.labirint.ru/books/828314/cover.jpg/363-0\",\r\n    \"dateOfBirth\": \"03/10/2000\",\r\n    \"about\": 333\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v202/author/add",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v202",
+										"author",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateAuthor(некорректная дата)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200 OK\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 5000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.collectionVariables.set(\"authorId\", jsonData.id);\r",
+											"\r",
+											"\r",
+											"pm.test(\"Check body jsonData.id is string\", function () {\r",
+											"    pm.expect(jsonData.id).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.id\", function () {\r",
+											"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"authorId\"));\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.firstName is string\", function () {\r",
+											"    pm.expect(jsonData.firstName).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.firstName equals Ivanov\", function () {\r",
+											"    pm.expect(jsonData.firstName).to.eql('Ivanov');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.lastName is string\", function () {\r",
+											"    pm.expect(jsonData.lastName).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.lastName equals Ivan\", function () {\r",
+											"    pm.expect(jsonData.lastName).to.eql('Ivan');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.photo is string\", function () {\r",
+											"    pm.expect(jsonData.photo).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.photo equals https://imo10.labirint.ru/books/828314/cover.jpg/363-0\", function () {\r",
+											"    pm.expect(jsonData.photo).to.eql('https://imo10.labirint.ru/books/828314/cover.jpg/363-0');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.dateOfBirth is string\", function () {\r",
+											"    pm.expect(jsonData.dateOfBirth).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.dateOfBirth equals 03/10/2000\", function () {\r",
+											"    pm.expect(jsonData.dateOfBirth).to.eql('03/10/2000')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.about is string\", function () {\r",
+											"    pm.expect(jsonData.about).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.about equals Похититель трупов\", function () {\r",
+											"    pm.expect(jsonData.about).to.eql('Похититель трупов')\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Ivanov\",\r\n    \"lastName\": \"Ivan\",\r\n    \"photo\": \"https://imo10.labirint.ru/books/828314/cover.jpg/363-0\",\r\n    \"dateOfBirth\": \"10/10/2030\",\r\n    \"about\": \"Похититель трупов\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v202/author/add",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v202",
+										"author",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateAuthor(некорректный урл)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200 OK\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 5000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.collectionVariables.set(\"authorId\", jsonData.id);\r",
+											"\r",
+											"\r",
+											"pm.test(\"Check body jsonData.id is string\", function () {\r",
+											"    pm.expect(jsonData.id).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.id\", function () {\r",
+											"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"authorId\"));\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.firstName is string\", function () {\r",
+											"    pm.expect(jsonData.firstName).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.firstName equals Ivanov\", function () {\r",
+											"    pm.expect(jsonData.firstName).to.eql('Ivanov');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.lastName is string\", function () {\r",
+											"    pm.expect(jsonData.lastName).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.lastName equals Ivan\", function () {\r",
+											"    pm.expect(jsonData.lastName).to.eql('Ivan');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.photo is string\", function () {\r",
+											"    pm.expect(jsonData.photo).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.photo equals https://imo10.labirint.ru/books/828314/cover.jpg/363-0\", function () {\r",
+											"    pm.expect(jsonData.photo).to.eql('https://imo10.labirint.ru/books/828314/cover.jpg/363-0');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.dateOfBirth is string\", function () {\r",
+											"    pm.expect(jsonData.dateOfBirth).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.dateOfBirth equals 03/10/2000\", function () {\r",
+											"    pm.expect(jsonData.dateOfBirth).to.eql('03/10/2000')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.about is string\", function () {\r",
+											"    pm.expect(jsonData.about).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.about equals Похититель трупов\", function () {\r",
+											"    pm.expect(jsonData.about).to.eql('Похититель трупов')\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Ivanov\",\r\n    \"lastName\": \"Ivan\",\r\n    \"photo\": \"https://imo10.labirint.ru/books/828314/cover.jpg/363-0.ruuuuuu\",\r\n    \"dateOfBirth\": \"10/10/2000\",\r\n    \"about\": \"Похититель трупов\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v202/author/add",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v202",
+										"author",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateAuthor(id в body)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200 OK\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 5000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.collectionVariables.set(\"authorId\", jsonData.id);\r",
+											"\r",
+											"\r",
+											"pm.test(\"Check body jsonData.id is string\", function () {\r",
+											"    pm.expect(jsonData.id).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.id\", function () {\r",
+											"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"authorId\"));\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.firstName is string\", function () {\r",
+											"    pm.expect(jsonData.firstName).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.firstName equals Ivanov\", function () {\r",
+											"    pm.expect(jsonData.firstName).to.eql('Ivanov');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.lastName is string\", function () {\r",
+											"    pm.expect(jsonData.lastName).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.lastName equals Ivan\", function () {\r",
+											"    pm.expect(jsonData.lastName).to.eql('Ivan');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.photo is string\", function () {\r",
+											"    pm.expect(jsonData.photo).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.photo equals https://imo10.labirint.ru/books/828314/cover.jpg/363-0\", function () {\r",
+											"    pm.expect(jsonData.photo).to.eql('https://imo10.labirint.ru/books/828314/cover.jpg/363-0');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.dateOfBirth is string\", function () {\r",
+											"    pm.expect(jsonData.dateOfBirth).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.dateOfBirth equals 03/10/2000\", function () {\r",
+											"    pm.expect(jsonData.dateOfBirth).to.eql('03/10/2000')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.about is string\", function () {\r",
+											"    pm.expect(jsonData.about).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.about equals Похититель трупов\", function () {\r",
+											"    pm.expect(jsonData.about).to.eql('Похититель трупов')\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 3449,\r\n    \"firstName\": \"Ivanov\",\r\n    \"lastName\": \"Ivan\",\r\n    \"photo\": \"https://imo10.labirint.ru/books/828314/cover.jpg/363-0\",\r\n    \"dateOfBirth\": \"03/10/2000\",\r\n    \"about\": \"Похититель трупов\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v202/author/add",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v202",
+										"author",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateAuthor(не полный body)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200 OK\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 5000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.collectionVariables.set(\"authorId\", jsonData.id);\r",
+											"\r",
+											"\r",
+											"pm.test(\"Check body jsonData.id is string\", function () {\r",
+											"    pm.expect(jsonData.id).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.id\", function () {\r",
+											"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"authorId\"));\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.firstName is string\", function () {\r",
+											"    pm.expect(jsonData.firstName).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.firstName equals Ivanov\", function () {\r",
+											"    pm.expect(jsonData.firstName).to.eql('Ivanov');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.lastName is string\", function () {\r",
+											"    pm.expect(jsonData.lastName).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.lastName equals Ivan\", function () {\r",
+											"    pm.expect(jsonData.lastName).to.eql('Ivan');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.photo is string\", function () {\r",
+											"    pm.expect(jsonData.photo).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.photo equals https://imo10.labirint.ru/books/828314/cover.jpg/363-0\", function () {\r",
+											"    pm.expect(jsonData.photo).to.eql('https://imo10.labirint.ru/books/828314/cover.jpg/363-0');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.dateOfBirth is string\", function () {\r",
+											"    pm.expect(jsonData.dateOfBirth).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.dateOfBirth equals 03/10/2000\", function () {\r",
+											"    pm.expect(jsonData.dateOfBirth).to.eql('03/10/2000')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.about is string\", function () {\r",
+											"    pm.expect(jsonData.about).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.about equals Похититель трупов\", function () {\r",
+											"    pm.expect(jsonData.about).to.eql('Похититель трупов')\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Ivanov\",\r\n    \"lastName\": \"Ivan\",\r\n    \"photo\": \"https://imo10.labirint.ru/books/828314/cover.jpg/363-0\",\r\n    \"dateOfBirth\": \"03/10/2000\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v202/author/add",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v202",
+										"author",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateAuthor(не прав метод)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Ivanov\",\r\n    \"lastName\": \"Ivan\",\r\n    \"photo\": \"https://imo10.labirint.ru/books/828314/cover.jpg/363-0\",\r\n    \"dateOfBirth\": \"03/10/2000\",\r\n    \"about\": \"Похититель трупов\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v202/author/add",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v202",
+										"author",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateAuthor(v2)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Ivanov\",\r\n    \"lastName\": \"Ivan\",\r\n    \"photo\": \"https://imo10.labirint.ru/books/828314/cover.jpg/363-0\",\r\n    \"dateOfBirth\": \"03/10/2000\",\r\n    \"about\": \"Похититель трупов\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v2/author/add",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v2",
+										"author",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateAuthor(v1)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Ivanov\",\r\n    \"lastName\": \"Ivan\",\r\n    \"photo\": \"https://imo10.labirint.ru/books/828314/cover.jpg/363-0\",\r\n    \"dateOfBirth\": \"03/10/2000\",\r\n    \"about\": \"Похититель трупов\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v1/author/add",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"author",
+										"add"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "UpdateAuthor",
+					"item": [
+						{
+							"name": "UpdateAuthor",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200 OK\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 5000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.collectionVariables.set(\"authorId\", jsonData.id);\r",
+											"\r",
+											"\r",
+											"pm.test(\"Check body jsonData.id is string\", function () {\r",
+											"    pm.expect(jsonData.id).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.id\", function () {\r",
+											"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"authorId\"));\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.firstName is string\", function () {\r",
+											"    pm.expect(jsonData.firstName).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.firstName equals Ivanova\", function () {\r",
+											"    pm.expect(jsonData.firstName).to.eql('Ivanova');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.lastName is string\", function () {\r",
+											"    pm.expect(jsonData.lastName).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.lastName equals Svetlana\", function () {\r",
+											"    pm.expect(jsonData.lastName).to.eql('Svetlana');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.photo is string\", function () {\r",
+											"    pm.expect(jsonData.photo).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check jsonData.photo equals https://imo10.labirint.ru/books/828314/cover.jpg/363-0\", function () {\r",
+											"    pm.expect(jsonData.photo).to.eql('https://imo10.labirint.ru/books/828314/cover.jpg/363-0');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.dateOfBirth is string\", function () {\r",
+											"    pm.expect(jsonData.dateOfBirth).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.dateOfBirth equals 10/10/2004\", function () {\r",
+											"    pm.expect(jsonData.dateOfBirth).to.eql('10/10/2004')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.about is string\", function () {\r",
+											"    pm.expect(jsonData.about).to.be.an('String')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Check body jsonData.about equals Похитительница трупов\", function () {\r",
+											"    pm.expect(jsonData.about).to.eql('Похитительница трупов')\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Ivanova\",\r\n    \"lastName\": \"Svetlana\",\r\n    \"photo\": \"https://imo10.labirint.ru/books/828314/cover.jpg/363-0\",\r\n    \"dateOfBirth\": \"10/10/2004\",\r\n    \"about\": \"Похитительница трупов\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v202/author/{{authorId}}",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v202",
+										"author",
+										"{{authorId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateAuthor(не полный body)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 3445,\r\n    \"firstName\": \"Ivanova\",\r\n    \"lastName\": \"Svetlana\",\r\n    \"photo\": \"https://imo10.labirint.ru/books/828314/cover.jpg/363-0\",\r\n    \"dateOfBirth\": \"10/10/2004\",\r\n    \"about\": \"Похитительница трупов\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v202/author/{{authorId}}",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v202",
+										"author",
+										"{{authorId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateAuthor(id в параметрах)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Ivanova\",\r\n    \"lastName\": \"Svetlana\",\r\n    \"photo\": \"https://imo10.labirint.ru/books/828314/cover.jpg/363-0\",\r\n    \"dateOfBirth\": \"10/10/2004\",\r\n    \"about\": \"Похитительница трупов\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v202/author/?{{authorId}}",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v202",
+										"author",
+										""
+									],
+									"query": [
+										{
+											"key": "{{authorId}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateAuthor(не прав метод)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Ivanova\",\r\n    \"lastName\": \"Svetlana\",\r\n    \"photo\": \"https://imo10.labirint.ru/books/828314/cover.jpg/363-0\",\r\n    \"dateOfBirth\": \"10/10/2004\",\r\n    \"about\": \"Похитительница трупов\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v202/author/{{authorId}}",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v202",
+										"author",
+										"{{authorId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateAuthor(v2)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Ivanova\",\r\n    \"lastName\": \"Svetlana\",\r\n    \"photo\": \"https://imo10.labirint.ru/books/828314/cover.jpg/363-0\",\r\n    \"dateOfBirth\": \"10/10/2004\",\r\n    \"about\": \"Похитительница трупов\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v2/author/{{authorId}}",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v2",
+										"author",
+										"{{authorId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateAuthor(v1)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Ivanova\",\r\n    \"lastName\": \"Svetlana\",\r\n    \"photo\": \"https://imo10.labirint.ru/books/828314/cover.jpg/363-0\",\r\n    \"dateOfBirth\": \"10/10/2004\",\r\n    \"about\": \"Похитительница трупов\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v1/author/{{authorId}}",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"author",
+										"{{authorId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DeleteAuthor",
+					"item": [
+						{
+							"name": "DeleteAuthor",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200 OK\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is OK\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 5000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+											"});\r",
+											"\r",
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"\r",
+											"pm.test(\"Check body data is not jsonData\", function () {\r",
+											"    pm.expect(jsonData).to.be.not.an('json')\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v202/author/{{authorId}}",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v202",
+										"author",
+										"{{authorId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteAuthor(без id)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v202/author/",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v202",
+										"author",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteAuthor(не прав метод)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v202/author/{{authorId}}",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v202",
+										"author",
+										"{{authorId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteAuthor(id в параметрах)",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v202/author/?id=3462",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v202",
+										"author",
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "3462"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "GetBookList",
+					"item": [
+						{
+							"name": "GetBookList",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/book",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"book"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetBookList (не прав метод)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/book",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"book"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetBookList (page)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/book?page=1",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"book"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetBookList (limit)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/book?limit=10",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"book"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GetBookById",
+					"item": [
+						{
+							"name": "GetBookById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/book/5610",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"book",
+										"5610"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetBookById (не прав метод)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/book/5610",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"book",
+										"5610"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetBookById (id через ?)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/book?id=5610",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"book"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "5610"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GetAuthorIdBooks",
+					"item": [
+						{
+							"name": "GetAuthorIdBooks",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/author/21/book",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"author",
+										"21",
+										"book"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAuthorIdBooks (не прав метод)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/author/21/book",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"author",
+										"21",
+										"book"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAuthorIdBooks Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/author/0/book",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"author",
+										"0",
+										"book"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "CreateBook",
+					"item": [
+						{
+							"name": "CreateBook",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.collectionVariables.set(\"bookId\", jsonData.id);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Самая лучшая книга\",\r\n    \"published\": \"1998\",\r\n\t\"authorId\": \"21\",\r\n\t\"genre\": \"Проза\",\r\n    \"annotation\": \"лучше этой книги просто не найти\",\r\n\t\"picture\": \"https://ir.ozone.ru/s3/multimedia-e/c1000/6659503826.jpg\",\r\n\t\"amount\": 1000,\r\n    \"likes\": 10,\r\n\t\"type\": \"book\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/book/add",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"book",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateBook (не прав метод)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Самая лучшая книга\",\r\n    \"published\": \"1998\",\r\n\t\"authorId\": \"21\",\r\n\t\"genre\": \"Проза\",\r\n    \"annotation\": \"лучше этой книги просто не найти\",\r\n\t\"picture\": \"https://ir.ozone.ru/s3/multimedia-e/c1000/6659503826.jpg\",\r\n\t\"amount\": 1000,\r\n    \"likes\": 10,\r\n\t\"type\": \"book\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/book/add",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"book",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateBook Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Самая лучшая книга\",\r\n    \"published\": \"1958\",\r\n\t\"authorId\": \"21\",\r\n\t\"genre\": \"Чудеса\",\r\n    \"annotation\": \"лучше этой книги просто не найти\",\r\n\t\"picture\": \"https://ir.ozone.ru/s3/multimedia-e/c1000/6659503826.jpg\",\r\n\t\"amount\": 400,\r\n    \"likes\": 9,\r\n\t\"type\": \"book\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/book/add",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"book",
+										"add"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "UpdateBookFully",
+					"item": [
+						{
+							"name": "UpdateBookFully",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Самая худшая книга \",\r\n    \"published\": \"1998\",\r\n\t\"authorId\": \"21\",\r\n\t\"genre\": \"Проза\",\r\n    \"annotation\": \"лучше этой книги просто не найти\",\r\n\t\"picture\": \"https://ir.ozone.ru/s3/multimedia-e/c1000/6659503826.jpg\",\r\n\t\"amount\": 1000,\r\n    \"likes\": 10,\r\n\t\"type\": \"book\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/book/{{bookId}}",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"book",
+										"{{bookId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateBookFully (не прав метод)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Самая худшая книга \",\r\n    \"published\": \"1998\",\r\n\t\"authorId\": \"21\",\r\n\t\"genre\": \"Проза\",\r\n    \"annotation\": \"лучше этой книги просто не найти\",\r\n\t\"picture\": \"https://ir.ozone.ru/s3/multimedia-e/c1000/6659503826.jpg\",\r\n\t\"amount\": 1000,\r\n    \"likes\": 10,\r\n\t\"type\": \"book\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/book/{{bookId}}",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"book",
+										"{{bookId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateBookFully Copy",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Самая худшая книга \",\r\n    \"published\": \"1998\",\r\n\t\"authorId\": \"21\",\r\n\t\"genre\": \"Проза\",\r\n    \"annotation\": \"лучше этой книги просто не найти\",\r\n\t\"picture\": \"https://ir.ozone.ru/s3/multimedia-e/c1000/6659503826.jpg\",\r\n\t\"amount\": 1000,\r\n    \"likes\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/book/{{bookId}}",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"book",
+										"{{bookId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "UpdateBookPartially",
+					"item": [
+						{
+							"name": "UpdateBookPartially",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Самая худшая книга \",\r\n    \r\n\t\"authorId\": \"21\",\r\n\t\"genre\": \"Проза\",\r\n    \"annotation\": \"лучше этой книги просто не найти\",\r\n\t\"picture\": \"https://ir.ozone.ru/s3/multimedia-e/c1000/6659503826.jpg\",\r\n\t\"amount\": 1000,\r\n    \"likes\": 10,\r\n\t\"type\": \"book\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/book/{{bookId}}",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"book",
+										"{{bookId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateBookPartially (не прав метод)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Самая худшая книга \",\r\n    \r\n\t\"authorId\": \"21\",\r\n\t\"genre\": \"Проза\",\r\n    \"annotation\": \"лучше этой книги просто не найти\",\r\n\t\"picture\": \"https://ir.ozone.ru/s3/multimedia-e/c1000/6659503826.jpg\",\r\n\t\"amount\": 1000,\r\n    \"likes\": 10,\r\n\t\"type\": \"book\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/book/{{bookId}}",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"book",
+										"{{bookId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateBookPartially Copy",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/book/{{bookId}}",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"book",
+										"{{bookId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DeleteBook",
+					"item": [
+						{
+							"name": "DeleteBook",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/book/{{bookId}}",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"book",
+										"{{bookId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteBook (не прав метод)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/book/{{bookId}}",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"book",
+										"{{bookId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteBook Copy",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v391/book/?id={{bookId}}",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v391",
+										"book",
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "{{bookId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "GetReviewList",
+					"item": [
+						{
+							"name": "GetReviewList",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v485/review",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v485",
+										"review"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetReviewList (не прав метод)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v485/review",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v485",
+										"review"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetReviewList (page)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v485/review/page",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v485",
+										"review",
+										"page"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetReviewList (limit)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v485/review/limit",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v485",
+										"review",
+										"limit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetReviewList (другая версия)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v1/review",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v1",
+										"review"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GetReviewById",
+					"item": [
+						{
+							"name": "GetReviewById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v485/review/3476",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v485",
+										"review",
+										"3476"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetReviewById (не прав метод)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v485/review/3165",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v485",
+										"review",
+										"3165"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetReviewById (id в параметрах)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v485/review?id=3165",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v485",
+										"review"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "3165"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetReviewById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v485/review/id=3165",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v485",
+										"review",
+										"id=3165"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GetReviewByBookId",
+					"item": [
+						{
+							"name": "GetReviewByBookId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v485/review/3297/book",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v485",
+										"review",
+										"3297",
+										"book"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetReviewByBookId (не прав метод)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v485/review/3297/book",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v485",
+										"review",
+										"3297",
+										"book"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetReviewByBookId (поиск ошибок)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v485/book/3297/review",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v485",
+										"book",
+										"3297",
+										"review"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "CreateReview",
+					"item": [
+						{
+							"name": "CreateReview",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.collectionVariables.set(\"reviewId\", jsonData.id);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"Zhan Pol\",\r\n    \"avatar\": \"http://placeimg.com/640/480\",\r\n    \"review\": \"Годная книга\",\r\n    \"raiting\": 5,\r\n    \"bookId\": 1510\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v485/review/add",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v485",
+										"review",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateReview (не прав метод)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"Zhan Pol\",\r\n    \"avatar\": \"http://placeimg.com/640/480\",\r\n    \"review\": \"Годная книга\",\r\n    \"raiting\": 5,\r\n    \"bookId\": 1510\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v485/review/add",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v485",
+										"review",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CreateReview (поиск ошибок)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"Zhan\",\r\n    \"avatar\": \"http://placeimg.com/640/480\",\r\n    \"review\": \"Very good book\",\r\n    \"raiting\": 5,\r\n    \"bookId\": 1510\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v485/review/add",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v485",
+										"review",
+										"add"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "UpdateReview",
+					"item": [
+						{
+							"name": "UpdateReview",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"Zhan Pol Belmondo\",\r\n    \"avatar\": \"http://placeimg.com/640/480\",\r\n    \"review\": \"Хреновая книга\",\r\n    \"raiting\": 0,\r\n    \"bookId\": 1510\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v485/review/{{reviewId}}",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v485",
+										"review",
+										"{{reviewId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateReview (не прав метод)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"Zhan Pol Belmondo\",\r\n    \"avatar\": \"http://placeimg.com/640/480\",\r\n    \"review\": \"Хреновая книга\",\r\n    \"raiting\": 0,\r\n    \"bookId\": 1510\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v485/review/3476",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v485",
+										"review",
+										"3476"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateReview (поиск ошибок)",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"Zhan Pol Belmondo\",\r\n    \"avatar\": \"http://placeimg.com/640/480\",\r\n    \"review\": \"Хреновая книга\",\r\n    \"raiting\": 0,\r\n    \"bookId\": 1510    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v485/review/3476",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v485",
+										"review",
+										"3476"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DeleteReview",
+					"item": [
+						{
+							"name": "DeleteReview",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"Zhan Pol Belmondo\",\r\n    \"avatar\": \"http://placeimg.com/640/480\",\r\n    \"review\": \"Хреновая книга\",\r\n    \"raiting\": 0,\r\n    \"bookId\": 1510\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v485/review/{{reviewId}}",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v485",
+										"review",
+										"{{reviewId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteReview (не прав метод)",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v485/review/{{reviewId}}",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v485",
+										"review",
+										"{{reviewId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteReview Copy",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"Zhan Pol Belmondo\",\r\n    \"avatar\": \"http://placeimg.com/640/480\",\r\n    \"review\": \"Хреновая книга\",\r\n    \"raiting\": 0,\r\n    \"bookId\": 1510\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://apiquest.sedtest-tools.ru:3000/v485/review?id={{reviewId}}",
+									"protocol": "http",
+									"host": [
+										"apiquest",
+										"sedtest-tools",
+										"ru"
+									],
+									"port": "3000",
+									"path": [
+										"v485",
+										"review"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "{{reviewId}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"quest\",\r\n    \"password\": \"fkjsh34kj32454!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://apiquest.sedtest-tools.ru:3000/v1/login",
+					"protocol": "http",
+					"host": [
+						"apiquest",
+						"sedtest-tools",
+						"ru"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{request_token}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "request_token",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "authorId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "bookId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "reviewId",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
