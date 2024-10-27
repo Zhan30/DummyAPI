@@ -89,3 +89,10 @@ GET /public/v2/users/6942253/posts	Retrieves user posts
 ----
 ### COMMENTS
 ----
+
+#### Resources
+
+https://gorest.co.in/public/v2/comments
+
+#### Nested Resources
+
