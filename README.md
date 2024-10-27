@@ -51,7 +51,7 @@ GET /public/v2/users/6942253/posts	Retrieves user posts
     "status": "active"
 }
 ```
-**Response body**
+***Response body***
 ```javascript
 {
     "id": 7494004,
@@ -71,7 +71,7 @@ GET /public/v2/users/6942253/posts	Retrieves user posts
     "name": "11111"
 }
 ```
-**Response body**
+***Response body***
 ```javascript
 {
     "name": "11111",
@@ -95,4 +95,58 @@ GET /public/v2/users/6942253/posts	Retrieves user posts
 https://gorest.co.in/public/v2/comments
 
 #### Nested Resources
+
+GET /public/v2/posts/6942264/comments
+
+#### Запросы
+
+##### 1. GET AllComments
+
+Возвращает все комментарии
+
+##### 2. GET OneComment
+
+Возвращает один комментарий по его id, который передается в URL запроса
+
+##### 3. POST CreateComment
+
+Создание комментария к посту. Данные комментария передаются в Request body:
+
+```javascript
+{
+    "post_id": 164883,
+    "name": "Sergey",
+    "email": "ruuuuu@ru.ru",
+    "body": "Ty zahodi, esli che"
+}
+```
+***Response body***
+```javascript
+{
+    "id": 127639,
+    "post_id": 164883,
+    "name": "Sergey",
+    "email": "ruuuuu@ru.ru",
+    "body": "Ty zahodi, esli che"
+}
+```
+
+##### 4. PUT ChangeComment
+
+Изменение существующего комментария. Новые данные также передаются в Request body:
+```javascript
+{
+"body": "111111"
+}
+```
+***Response body***
+```javascript
+{
+    "body": "111111",
+    "id": 127583,
+    "post_id": 164883,
+    "name": "Sergey",
+    "email": "ruuuuu@ru.ru"
+}
+```
 
