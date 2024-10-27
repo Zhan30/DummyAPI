@@ -160,4 +160,25 @@ GET /public/v2/posts/6942264/comments
 
 ##### 7. POST CreateComment_NR
 
-Cоздание комментария к определенному посту через Nested Resources. ID поста передается в URL pfghjcf
+Cоздание комментария к определенному посту через Nested Resources. ID поста передается в URL запроса, а данные комментария в Request body:
+```javascript
+{    
+    "name": "Bhushit Menon DDS",
+    "email": "menon_bhushit_dds@cruickshank.test",
+    "body": "Yeeeee"
+}
+```
+***Response body***
+```javascript
+{
+    "id": 127640,
+    "post_id": 164883,
+    "name": "Bhushit Menon DDS",
+    "email": "menon_bhushit_dds@cruickshank.test",
+    "body": "Yeeeee"
+}
+```
+----
+
+
+
