@@ -253,8 +253,6 @@ owner: object(User Preview)
 ### Майнд-карта 
 Данная МК представляет собой набор тестов для тестирования объекта **Post**. Подробная проверка расписана для методов **Get List** и **Create Post**
 
-![Alt-текст](https://i.postimg.cc/7h9nCT9X/Dummi-API-Map-1.png)
-
 [![DummiAPI-Map 1.png](https://s.iimg.su/s/27/XDR6LgDdh3S5Cdkdwwru71x2JgMfYWHQ65TadEAH.png)](https://iimg.su/i/J8v9I)
 
-https://xmind.ai/share/4LaAWUll?xid=D1AcZ61X
+Также майнд-карту можно [скачать] 
