@@ -255,6 +255,6 @@ owner: object(User Preview)
 
 ![Alt-текст](https://i.postimg.cc/7h9nCT9X/Dummi-API-Map-1.png)
 
-[![Dummi-API-Map-1.png](https://i.postimg.cc/7h9nCT9X/Dummi-API-Map-1.png)](https://postimg.cc/hQJd6vH7)
+[![DummiAPI-Map 1.png](https://s.iimg.su/s/27/XDR6LgDdh3S5Cdkdwwru71x2JgMfYWHQ65TadEAH.png)](https://iimg.su/i/J8v9I)
 
 https://xmind.ai/share/4LaAWUll?xid=D1AcZ61X
