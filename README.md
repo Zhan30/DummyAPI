@@ -154,3 +154,10 @@ GET /public/v2/posts/6942264/comments
 
 Удаление существующего комментария по его id, который передается в URL запроса
 
+##### 6. GET FilterCommentsByPost_NR
+
+Возвращает комментарии по определенному посту через Nested Resources. ID поста задается в URL запроса
+
+##### 7. POST CreateComment_NR
+
+Cоздание комментария к определенному посту через Nested Resources. ID поста передается в URL pfghjcf
