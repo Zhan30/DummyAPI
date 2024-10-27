@@ -194,7 +194,21 @@ https://xmind.ai/share/4LaAWUll?xid=D1AcZ61X
 
 ### POST
 ----
-#### GET GetPostList
 
-##### Правильные и неправильные методы
+#### GET /post (Get List)
 
+Возвращает список постов, отсортированных по дате создания.
+Доступен query params для вывода определенной страницы
+Доступен query params для отображения числа пользователей на странице.
+
+**Response body**
+
+**List**
+```javascript
+{
+data: Array(Model)
+total: number(total items in DB)
+page: number(current page)
+limit: number(number of items on page)
+}
+```
