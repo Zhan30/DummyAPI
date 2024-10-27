@@ -192,3 +192,9 @@ https://dummyapi.io/ - это сайт, представляющий собой 
 
 https://xmind.ai/share/4LaAWUll?xid=D1AcZ61X
 
+### POST
+----
+#### GET GetPostList
+
+##### Правильные и неправильные методы
+
