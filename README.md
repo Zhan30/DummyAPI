@@ -252,5 +252,5 @@ owner: object(User Preview)
 
 ### Майнд-карта 
 Данная МК представляет собой набор тестов для тестирования объекта **Post**. Подробная проверка расписана для методов **Get List** и **Create Post**
-![Alt-текст](https://drive.google.com/file/d/1vOMLtko-_nDZIZf6OEejA32YRislBkYe/view?usp=sharing "МК")
+![Alt-текст](https://imgur.com/a/j027oPp "МК")
 https://xmind.ai/share/4LaAWUll?xid=D1AcZ61X
