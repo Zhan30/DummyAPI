@@ -36,3 +36,26 @@ GET /public/v2/users/6942253/posts	Retrieves user posts
 #### GET OneUser
 
 Выводит одного пользователя по его id.
+
+#### POST CreateUser
+
+Создание пользователя, данные которого передаются в Request body
+
+**List**
+```javascript
+{  
+    "name": "Bhushit Menon DDS",
+    "email": "menon_bhushit_dds@cruickshank111.test",
+    "gender": "female",
+    "status": "active"
+}
+```
+**User preview**
+```javascript
+{
+    "id": 7494004,
+    "name": "Bhushit Menon DDS",
+    "email": "menon_bhushit_dds@cruickshank111.test",
+    "gender": "female",
+    "status": "active"
+}
