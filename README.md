@@ -1,8 +1,10 @@
-# DummyAPI
+# DummyAPI & Gorest
 
 В данном проекте описаны процессы тестирования API на открытых сервисах в веб-приложении Postman, добавлены коллекции и окружения.
 
 ## Оглавление
+
+## GOREST
 
 ## Описание проекта
 
@@ -33,15 +35,14 @@ GET /public/v2/users/6942253/posts	Retrieves user posts
 
 #### Запросы
 
-#### GET OneUser
+#### 1. GET OneUser
 
-Выводит одного пользователя по его id.
+Выводит одного пользователя по его id, которое передается в URL запроса.
 
-#### POST CreateUser
+#### 2. POST CreateUser
 
-Создание пользователя, данные которого передаются в Request body
+Создание пользователя, данные которого передаются в Request body:
 
-**List**
 ```javascript
 {  
     "name": "Bhushit Menon DDS",
@@ -50,7 +51,7 @@ GET /public/v2/users/6942253/posts	Retrieves user posts
     "status": "active"
 }
 ```
-**User preview**
+**Response body**
 ```javascript
 {
     "id": 7494004,
@@ -59,3 +60,29 @@ GET /public/v2/users/6942253/posts	Retrieves user posts
     "gender": "female",
     "status": "active"
 }
+```
+
+#### 3. PUT ChangeUser
+
+Изменение пользователя по его id. Данные, которые будут изменены, передаются в Request body:
+
+```javascript
+{  
+    "name": "11111"
+}
+```
+**Response body**
+```javascript
+{
+    "name": "11111",
+    "id": 7494004,
+    "email": "menon_bhushit_dds@cruickshank111.test",
+    "gender": "female",
+    "status": "active"
+}
+```
+
+#### 4. DEL DeleteUser
+
+Удаление пользователя по его id, которое передается в URL запроса.
+----
