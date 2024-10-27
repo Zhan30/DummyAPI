@@ -35,11 +35,11 @@ GET /public/v2/users/6942253/posts	Retrieves user posts
 
 #### Запросы
 
-#### 1. GET OneUser
+##### 1. GET OneUser
 
 Выводит одного пользователя по его id, которое передается в URL запроса.
 
-#### 2. POST CreateUser
+##### 2. POST CreateUser
 
 Создание пользователя, данные которого передаются в Request body:
 
@@ -62,7 +62,7 @@ GET /public/v2/users/6942253/posts	Retrieves user posts
 }
 ```
 
-#### 3. PUT ChangeUser
+##### 3. PUT ChangeUser
 
 Изменение пользователя по его id. Данные, которые будут изменены, передаются в Request body:
 
@@ -82,7 +82,10 @@ GET /public/v2/users/6942253/posts	Retrieves user posts
 }
 ```
 
-#### 4. DEL DeleteUser
+##### 4. DEL DeleteUser
 
 Удаление пользователя по его id, которое передается в URL запроса.
+
+----
+### COMMENTS
 ----
