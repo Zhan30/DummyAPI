@@ -3,6 +3,27 @@
 В данном проекте описаны процессы тестирования API на открытых сервисах в веб-приложении Postman, добавлены коллекции и окружения.
 
 ## Оглавление
+1. [GOREST](#gorest)
+   1. [Описание проекта](#описание-проекта)
+   2. [Важная информация](#важная-информация)
+   3. [USER](#user)
+      1. [Resources](#resources)
+      2. [Trying it Out](#trying-it-out)
+      3. [Nested Resources](#nested-resources)
+      4. [Запросы](#запросы)
+    4. [COMMENTS](#comments)
+       1. [Resources](#resources-1)
+       2. [Nested Resources](#nested-resources-1)
+       3. [Запросы](#запросы-1)
+2. [DummyAPI](#dummyapi)
+   1. [Описание проекта](#описание-проекта-1)
+   2. [POST](#post)
+      1. [GET /post (Get List)](#get-post-get-list)
+      2. [POST /post/create](#post-postcreate)
+   3. [Майнд-карта](#майнд-карта)
+   4. [Автотесты](#автотесты)
+   5. [Quest](#quest)
+3. [Коллекции POSTMAN](#коллекции-postman)
 
 ## GOREST
 
