@@ -269,4 +269,14 @@ owner: object(User Preview)
 
 В данном проекте также приложена коллекция запросов, созданных в рамках прохождения небольшого квеста. В рамках него необходимо было найти ID багов, скрытых в запросах API по объектам Author, Book и Review.
 
-Проверялись 
+Проверялись запросы на правильность и неправильность методов, на наличие параметров в запросах. Методы POST, PUT и PATCH проверялись на корректные, некорректные значения в полях, значения разного типа. Отправлялись запросы к различным версиям API. 
+
+----
+
+## Коллекции POSTMAN
+
+1. Окружение проекта DummyAPI: [скачать](https://github.com/Zhan30/DummyAPI/blob/main/DummyAPI.postman_environment.json)
+2. Окружение для коллекции Quest: [скачать](https://github.com/Zhan30/DummyAPI/blob/main/Quest.postman_environment.json)
+3. Коллекция запросов по объекту Post: [скачать](https://github.com/Zhan30/DummyAPI/blob/main/Post.postman_collection.json)
+4. Коллекция запросов обхекта Post с автотестами: [скачать](https://github.com/Zhan30/DummyAPI/blob/main/Post_Lesson_4.postman_collection.json)
+5. Коллекция запросов для квеста: [скачать](https://github.com/Zhan30/DummyAPI/blob/main/Quest.postman_collection.json)
